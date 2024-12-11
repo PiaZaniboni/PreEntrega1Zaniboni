@@ -1,9 +1,6 @@
-# Primera pre-entrega
-# E-commerce
-# Zaniboni, Maria Pia
+# Primera pre-entrega - E-commerce
+`Zaniboni, Maria Pia`
 
 # Instrucciones
-
 `npm install`
-
 `npm run dev`
