@@ -4,7 +4,7 @@ function ItemListContainer (props) {
     const greeting = props.greeting;
 
     return (
-        <h1 className="probando">{greeting}</h1>
+        <h2 className="text-center text-4xl font-bold">{greeting}</h2>
     );
 
 }

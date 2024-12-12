@@ -1,21 +1,12 @@
 import CartWidget from "./CartWidget";
 import Link from "./Link";
-
-const styleFlex = {
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection: "row",
-    gap: "15px"
-}
-
-//Libreria de estilos
-
+import Logo from "./Logo";
 
 export default function NavBar (props){
 
     return (
-        <nav style={styleFlex}>
-            <a href="/" title="CreativeLAb" alt="CreativeLAb">CreativeLab</a>
+        <nav className="flex flex-row">
+            <Logo />
                   
             <Link link="/dibujos">Dibujos</Link>
             <Link link="/stickers">Stickers</Link>

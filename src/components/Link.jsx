@@ -4,7 +4,7 @@ export default function Link(props){
     const displayText = children === undefined ? 'Button' : children;
 
     return (
-        <a href={link} alt={displayText} title={displayText} >
+        <a className="px-5" href={link} alt={displayText} title={displayText} >
             {displayText}
         </a>
     );
