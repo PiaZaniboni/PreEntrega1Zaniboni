@@ -7,7 +7,7 @@ export default function Logo (props){
         href="/" 
         title="CreativeLAb" 
         alt="CreativeLAb">
-            <h1 className="text-2xl font-medium" >CreativeLab</h1>
+            <h1 className="text-2xl font-medium font-sans" >CreativeLab</h1>
         </a>
     );
 
