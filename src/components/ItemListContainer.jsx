@@ -4,7 +4,9 @@ function ItemListContainer (props) {
     const greeting = props.greeting;
 
     return (
-        <h2 className="text-center text-4xl font-bold">{greeting}</h2>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2">
+            <h2 className="mt-20 text-center text-5xl font-bold">{greeting}</h2>
+        </div>
     );
 
 }
