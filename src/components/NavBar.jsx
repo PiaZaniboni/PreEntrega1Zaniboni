@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget";
-import Link from "./Link";
+import Button from "./Button";
 import Logo from "./Logo";
 
 export default function NavBar (props){
@@ -10,14 +10,12 @@ export default function NavBar (props){
                 <Logo />
                     
                 <div className="flex flex-row items-center">
-                    <Link link="/dibujos">Dibujos</Link>
-                    <Link link="/stickers">Stickers</Link>
-                    <Link link="/posters">Posters</Link>
-                    <Link link="/cuadernos">Cuadernos</Link>
-                    <Link link="/remeras">Remeras</Link>
-                    <Link link="/remeras">Parches</Link>
-                    <Link link="/accesorios">Accesorios</Link>  
-                        
+                    <Button link="/category/dibujos">Dibujos</Button>
+                    <Button link="/category/stickers">Stickers</Button>
+                    <Button link="/category/posters">Posters</Button>
+                    <Button link="/category/cuadernos">Cuadernos</Button>
+                    <Button link="/category/remeras">Remeras</Button>
+                
                     <CartWidget />
                 </div>
             </div>

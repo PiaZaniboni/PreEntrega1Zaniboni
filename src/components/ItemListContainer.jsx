@@ -1,12 +1,22 @@
+import getAsyncData, {getAsyncItemByCategory} from "../data/getAsyncData";
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+
 
 function ItemListContainer (props) {
+    const [ products, setProducts ] = useState([]);
+    const { catid } = useParams();
 
-    const greeting = props.greeting;
+    useEffect ( ()=> {
+        const respuestaPromise = (catid === undefined) ? getAsyncData() : getAsyncItemByCategory(catid);
+        respuestaPromise
+            .then( (respuesta)=> setProducts(respuesta) )
+            .catch( (error)=> alert(error));
+    },[catid]);
 
     return (
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2">
-            <h2 className="mt-20 text-center text-5xl font-bold font-sans">{greeting}</h2>
-        </div>
+        <ItemList greeting={props.greeting} products={products} />
     );
 
 }

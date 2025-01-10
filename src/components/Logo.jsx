@@ -1,14 +1,10 @@
+import { NavLink } from "react-router-dom";
 
 export default function Logo (props){
-
-
     return (
-        <a 
-        href="/" 
-        title="CreativeLAb" 
-        alt="CreativeLAb">
+        <NavLink to="/" >
             <h1 className="text-2xl font-medium font-sans" >CreativeLab</h1>
-        </a>
+        </NavLink>
     );
 
 
