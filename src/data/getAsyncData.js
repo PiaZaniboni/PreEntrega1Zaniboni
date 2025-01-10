@@ -1,4 +1,5 @@
 import products from "./data";
+const tiempoEspera = 500;
 
 export default function getAsyncData (){
     console.log("Solicitando datos");
@@ -11,7 +12,7 @@ export default function getAsyncData (){
             }else{
                 reject ("No encontramos productos");
             }
-        }, 2000);
+        }, tiempoEspera);
     });
 
     console.log("Promesa generada");
@@ -31,7 +32,7 @@ export function getAsyncItemById ( itemID ){
             }else{
                 reject ("No encontramos el producto con el id: ", itemID );
             }
-        }, 2000);
+        }, tiempoEspera);
     });
 
     console.log("Promesa generada");
@@ -50,7 +51,7 @@ export function getAsyncItemByCategory ( categoryId ){
             }else{
                 reject ("No encontramos el producto con el id: ", itemID );
             }
-        }, 2000);
+        }, tiempoEspera);
     });
 
     console.log("Promesa generada");
