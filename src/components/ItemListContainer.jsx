@@ -8,6 +8,7 @@ function ItemListContainer (props) {
     const [ products, setProducts ] = useState([]);
     const { catid } = useParams();
 
+    const categoryName = (catid === undefined) ?  '' : catid ;
     useEffect ( ()=> {
         const respuestaPromise = (catid === undefined) ? getAsyncData() : getAsyncItemByCategory(catid);
         respuestaPromise
@@ -16,7 +17,7 @@ function ItemListContainer (props) {
     },[catid]);
 
     return (
-        <ItemList greeting={props.greeting} products={products} />
+        <ItemList greeting={props.greeting + categoryName } products={products} />
     );
 
 }
