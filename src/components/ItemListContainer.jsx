@@ -13,7 +13,7 @@ function ItemListContainer (props) {
         const respuestaPromise = (catid === undefined) ? getAsyncData() : getAsyncItemByCategory(catid);
         respuestaPromise
             .then( (respuesta)=> setProducts(respuesta) )
-            .catch( (error)=> alert(error));
+            .catch( (error)=> console.log(error));
     },[catid]);
 
     return (

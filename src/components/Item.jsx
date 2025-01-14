@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Link } from "react-router-dom";
 
 export default function Item (props){
 
@@ -13,7 +13,9 @@ export default function Item (props){
                 <div>
                     <p>${price}</p>
                 </div>
-                <Button link="/">Ver detalle</Button>
+                <Link to={`/item/${id}`}>
+                    Ver detalle
+                </Link>
             </div>
         </div>
     );
