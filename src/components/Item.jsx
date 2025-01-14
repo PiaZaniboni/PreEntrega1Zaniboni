@@ -5,16 +5,14 @@ export default function Item (props){
     const { id, title, price, category, img } = props;
 
     return (
-        <div>
-            <img src={img} alt={title} />
-            <div>
-                <h3>{title}</h3>
-                <p>{category}</p>
-                <div>
-                    <p>${price}</p>
-                </div>
+        <div className="mb-6 mx-2">
+            <img className="rounded-[5px]" src={img} alt={title} />
+            <div className="mt-2">
+                <h3 className="font-bold text-gray-800 text-base">{title}</h3>
+                <p className="text-gray-700 text-sm">{category}</p>
+                <p className="font-bold text-black-700">${price}</p>
                 <Link to={`/item/${id}`}>
-                    Ver detalle
+                    <span className="underline uppercase text-sm mt-2 block">Ver detalle</span>
                 </Link>
             </div>
         </div>

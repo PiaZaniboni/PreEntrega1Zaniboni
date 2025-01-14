@@ -6,10 +6,8 @@ export default function ItemList ( props ){
 
     return (
         <>
-            <div className="">
-                <h2 className="my-20 text-center text-5xl font-bold font-sans">{greeting}</h2>
-            </div>
-            <div className="flex flex-wrap justify-center">
+            <h2 className="mt-20 mb-12 text-center text-4xl font-bold font-sans">{greeting}</h2>
+            <div className="flex flex-wrap justify-center mx-8">
                 { props.products.map( (item) => (
                     <Item
                         key={item.id}

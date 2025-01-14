@@ -10,19 +10,22 @@ import '@fontsource/roboto/700.css'; // Bold
 function App() {
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting="Listado de productos"/>} />
-        <Route path="/category/:catid" element={<ItemListContainer greeting="Listado de productos de la categoria "/>} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        
-      </Routes>
-
-      <footer>
+    <div className="min-h-screen flex flex-col">
+      <BrowserRouter>
+        <NavBar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<ItemListContainer greeting="Listado de productos"/>} />
+            <Route path="/category/:catid" element={<ItemListContainer greeting="Listado de productos de la categoria "/>} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+      <footer className="text-center font-sans w-full bg-slate-950 text-white py-4 mt-10">
         <small>Programado por Maria Pia Zaniboni</small>
       </footer>
-    </BrowserRouter>
+    
+    </div>
   )
 }
 
