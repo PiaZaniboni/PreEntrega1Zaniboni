@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { getAsyncItemById } from "../data/getAsyncData";
+import { getAsyncItemById } from "../data/database";
 import ItemDetail from "./ItemDetail";
+import Loader from "./Loader";
 import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer ( props ){
 
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState(null);
     const {id} = useParams();
 
     useEffect ( ()=>{
@@ -16,9 +17,6 @@ export default function ItemDetailContainer ( props ){
             .catch ((error)=> console.log(error) );
     },[id]);
 
-    return (
-        <div>
-            <ItemDetail {...product} />
-        </div>
-    );
+    if (product) return ( <ItemDetail id={id} {...product} />);
+    else return <Loader/>;
 }

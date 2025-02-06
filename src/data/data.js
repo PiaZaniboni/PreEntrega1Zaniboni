@@ -4,7 +4,7 @@ const products = [
         "title": "Bosque místico",
         "price": 25.00,
         "stock": 10,
-        "img": "https://picsum.photos/seed/1/240/180",
+        "img": "/seed/1/240/180",
         "category": "Dibujos"
     },
     {
@@ -12,7 +12,7 @@ const products = [
         "title": "Animales fantásticos",
         "price": 8.50,
         "stock": 25,
-        "img": "https://picsum.photos/seed/2/240/180",
+        "img": "/seed/2/240/180",
         "category": "Stickers"
     },
     {
@@ -20,7 +20,7 @@ const products = [
         "title": "Atardecer cósmico",
         "price": 15.00,
         "stock": 15,
-        "img": "https://picsum.photos/seed/3/240/180",
+        "img": "/seed/3/240/180",
         "category": "Posters"
     },
     {
@@ -28,7 +28,7 @@ const products = [
         "title": "Mandalas",
         "price": 12.00,
         "stock": 20,
-        "img": "https://picsum.photos/seed/4/240/180",
+        "img": "/seed/4/240/180",
         "category": "Cuadernos"
     },
     {
@@ -36,7 +36,7 @@ const products = [
         "title": "Diseño geométrico",
         "price": 20.00,
         "stock": 12,
-        "img": "https://picsum.photos/seed/5/240/180",
+        "img": "/seed/5/240/180",
         "category": "Remeras"
     },
     {
@@ -44,7 +44,7 @@ const products = [
         "title": "Ciudades mágicas",
         "price": 30.00,
         "stock": 5,
-        "img": "https://picsum.photos/seed/6/240/180",
+        "img": "/seed/6/240/180",
         "category": "Dibujos"
     },
     {
@@ -52,7 +52,7 @@ const products = [
         "title": "Gato galáctico",
         "price": 2.00,
         "stock": 50,
-        "img": "https://picsum.photos/seed/7/240/180",
+        "img": "/seed/7/240/180",
         "category": "Stickers"
     },
     {
@@ -60,7 +60,7 @@ const products = [
         "title": "Universo paralelo",
         "price": 18.00,
         "stock": 10,
-        "img": "https://picsum.photos/seed/8/240/180",
+        "img": "/seed/8/240/180",
         "category": "Posters"
     },
     {
@@ -68,7 +68,7 @@ const products = [
         "title": "Papel kraft",
         "price": 10.00,
         "stock": 15,
-        "img": "https://picsum.photos/seed/9/240/180",
+        "img": "/seed/9/240/180",
         "category": "Cuadernos"
     },
     {
@@ -76,7 +76,7 @@ const products = [
         "title": "Arte abstracto",
         "price": 22.00,
         "stock": 10,
-        "img": "https://picsum.photos/seed/10/240/180",
+        "img": "/seed/10/240/180",
         "category": "Remeras"
     },
     {
@@ -84,7 +84,7 @@ const products = [
         "title": "Paisaje onírico",
         "price": 20.00,
         "stock": 8,
-        "img": "https://picsum.photos/seed/11/240/180",
+        "img": "/seed/11/240/180",
         "category": "Dibujos"
     },
     {
@@ -92,7 +92,7 @@ const products = [
         "title": "Plantas y flores",
         "price": 9.00,
         "stock": 20,
-        "img": "https://picsum.photos/seed/12/240/180",
+        "img": "/seed/12/240/180",
         "category": "Stickers"
     },
     {
@@ -100,7 +100,7 @@ const products = [
         "title": "Arte retro",
         "price": 16.00,
         "stock": 12,
-        "img": "https://picsum.photos/seed/13/240/180",
+        "img": "/seed/13/240/180",
         "category": "Posters"
     },
     {
@@ -108,7 +108,7 @@ const products = [
         "title": "Tapa dura",
         "price": 14.00,
         "stock": 10,
-        "img": "https://picsum.photos/seed/14/240/180",
+        "img": "/seed/14/240/180",
         "category": "Cuadernos"
     },
     {
@@ -116,7 +116,7 @@ const products = [
         "title": "Ilustración de montaña",
         "price": 24.00,
         "stock": 5,
-        "img": "https://picsum.photos/seed/15/240/180",
+        "img": "/seed/15/240/180",
         "category": "Remeras"
     },
     {
@@ -124,7 +124,7 @@ const products = [
         "title": "Retrato surrealista",
         "price": 28.00,
         "stock": 6,
-        "img": "https://picsum.photos/seed/16/240/180",
+        "img": "/seed/16/240/180",
         "category": "Dibujos"
     },
     {
@@ -132,7 +132,7 @@ const products = [
         "title": "Universo gatuno",
         "price": 3.50,
         "stock": 40,
-        "img": "https://picsum.photos/seed/17/240/180",
+        "img": "/seed/17/240/180",
         "category": "Stickers"
     },
     {
@@ -140,7 +140,7 @@ const products = [
         "title": "Paisaje intergaláctico",
         "price": 20.00,
         "stock": 10,
-        "img": "https://picsum.photos/seed/18/240/180",
+        "img": "/seed/18/240/180",
         "category": "Posters"
     },
     {
@@ -148,7 +148,7 @@ const products = [
         "title": "Diseño de portada",
         "price": 18.00,
         "stock": 8,
-        "img": "https://picsum.photos/seed/19/240/180",
+        "img": "/seed/19/240/180",
         "category": "Cuadernos"
     },
     {
@@ -156,7 +156,7 @@ const products = [
         "title": "Diseño botánico",
         "price": 26.00,
         "stock": 7,
-        "img": "https://picsum.photos/seed/20/240/180",
+        "img": "/seed/20/240/180",
         "category": "Remeras"
     }
 ];

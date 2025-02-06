@@ -1,11 +1,12 @@
-import getAsyncData, {getAsyncItemByCategory} from "../data/getAsyncData";
+import getAsyncData, {getAsyncItemByCategory} from "../data/database";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 
 function ItemListContainer (props) {
-    const [ products, setProducts ] = useState([]);
+    const [ products, setProducts ] = useState(null);
     const { catid } = useParams();
 
     const categoryName = (catid === undefined) ?  '' : catid ;
@@ -16,9 +17,8 @@ function ItemListContainer (props) {
             .catch( (error)=> console.log(error));
     },[catid]);
 
-    return (
-        <ItemList greeting={props.greeting + categoryName } products={products} />
-    );
+    if (products) return <ItemList greeting={props.greeting + categoryName } products={products} />;
+    else return <Loader/>;
 
 }
 
