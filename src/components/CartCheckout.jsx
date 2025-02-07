@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function CartCheckout (props) {
     const [ errorMessage, setErrorMessage ] = useState(null);
-    const [ successMessage, setSuccessMessage ] = useState(null);
     const { cartItems, getTotalPrice, clearCart } = useContext(cartContext);
     const navigate = useNavigate();
 
@@ -15,6 +14,7 @@ export default function CartCheckout (props) {
         username: "",
         surname: "",
         age: "",
+        email: "",
       });
     
     function onInputChange(evt) {
@@ -27,15 +27,14 @@ export default function CartCheckout (props) {
     async function handleCheckout (evt) {
         evt.preventDefault();
 
-        console.log("hola");
         setErrorMessage(null);
-        setSuccessMessage(null);
 
         const orderData = {
             buyer: {
                 username: userData.username,
                 surname: userData.surname,
                 age: userData.age,
+                email: userData.email,
             },
             cartItems,
             total: getTotalPrice(),
@@ -46,20 +45,20 @@ export default function CartCheckout (props) {
             .then((respuesta) => {
                 setTimeout(() => {
                     clearCart();
-                    setSuccessMessage(`Compra realizada con éxito. Espere un momento`);
 
                     if (respuesta !== null) {
                         navigate(`/orderconfirmation/${respuesta}`); 
                     }
-                }, 200);
+                }, 100);
             })
             .catch((error) => {
-                setErrorMessage(error.message || "Ocurrió un error en la compra.");
+                setErrorMessage(error.message);
          });
     }
 
     return (
-        <form>
+        <form className="min-w-[600px]">
+        <h2 className="text-lg font-bold mt-8 mb-10">Completa tus datos antes de finalizar la compra:</h2>
         <div className="flex mb-2">
             <label className="w-[100px] mr-2">Nombre</label>
             <input
@@ -90,14 +89,23 @@ export default function CartCheckout (props) {
             />
         </div>
 
-        <button className="rounded-[5px] bg-slate-950 px-4 py-2 text-white ml-4 mt-14" 
+        <div className="flex mb-2">
+            <label className="w-[100px] mr-2">Email</label>
+            <input
+            name="email"
+            type="email"
+            onChange={onInputChange}
+            className={styleInput}
+            />
+        </div>
+
+        <button className="rounded-[5px] bg-slate-950 px-4 py-2 text-white mt-14" 
             disabled={!( userData.username !== "" && userData.surname !== "" && userData.age !== "")}
             onClick={handleCheckout}
         >
             Finalizar compra
         </button>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
     </form>
     );
 } 

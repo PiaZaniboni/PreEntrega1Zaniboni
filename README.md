@@ -31,9 +31,9 @@ Bienvenidos a mi proyecto final del curso de React js dictado por Coderhouse. Mi
 
 * Aplicación de carrito de compras interactiva.
 * Añadir y eliminar productos.
-* Calcular total de compras.
-* Catalogo de productos cargado en Firebase.
-* Creacion de ordenes de compra en Firebase.
+* Calcular total de productos.
+* Catalogo de productos cargado en db alojada en Firebase.
+* Creacion de ordenes de compra y escritura en db alojada en Firebase.
 * Manejo de formulario para completar la compra.
 * Interfaz simple y minimalista utilizando **Tailwind CSS**.
 

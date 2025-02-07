@@ -33,7 +33,7 @@ function App() {
       </BrowserRouter>
     </CartContextProvider>
     <footer className="text-center font-sans w-full bg-slate-950 text-white py-4 mt-10">
-      <small>Programado por Maria Pia Zaniboni</small>
+      <small>Programado por <a className="font-bold" target="_blank" href="https://www.linkedin.com/in/maria-pia-zaniboni/">Maria Pia Zaniboni </a></small>
       {/*<button  onClick={exportProducts}>MIGRAR PRODUCTOS</button>*/}
     </footer>
   </div>

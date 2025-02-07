@@ -2,8 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, getDoc, doc,  query, where, addDoc, setDoc, writeBatch, documentId } from "firebase/firestore";
 import products from "./data";
 
-
-//Esta data no se suele guardar en el repo!! 
 const firebaseConfig = {
   apiKey: import.meta.env.FIRESTORE_APIKEY,
   authDomain: "creative-lab-98da1.firebaseapp.com",
@@ -29,7 +27,6 @@ export default async function getAsyncData (){
                 return { ... doc.data(), id: doc.id }
             } 
     );
-
 
     return documentsData;
 } 
@@ -66,8 +63,7 @@ export async function exportProducts(params) {
     });
 
     const commitRes = await batch.commit();
-
-    console.log( "Subida de productos terminada: " , commitRes );
+    console.log( "Send" );
 }
 
 export async function createBuyOrderWithStockUpdate(order) {    
@@ -97,18 +93,13 @@ export async function createBuyOrderWithStockUpdate(order) {
         }
     });
 
-    console.log(itemsSinStock);
-
-    const itemsSinStockTitles = itemsSinStock.map ( item => item.title ).join(", ");
+    const itemsSinStockTitles = itemsSinStock.map ( item => item ).join(", ");
 
     if (itemsSinStock.length > 0){
-        console.log("entre", itemsSinStock);
         throw new Error( `Disculpanos! No tenemos stock de los siguientes productos: ${itemsSinStockTitles}`);
     }else{
 
         await batch.commit();
-        console.log(order);
-
         let newOrder = await addDoc( orderRef, order );
 
         return newOrder.id;

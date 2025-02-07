@@ -2,6 +2,7 @@ import { useContext } from "react";
 import cartContext from "../storage/cartContext";
 import CartItem from "./CartItem";
 import CartCheckout from "./CartCheckout";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function CartContainer (props){
     const { cartItems, removeItem, clearCart, getTotalPrice } = useContext (cartContext);
@@ -38,7 +39,7 @@ export default function CartContainer (props){
                      </tbody>
                      </table>
                      <div className="min-w-full mt-8 flex justify-between items-center">
-                        <button className="rounded-[5px] font-bold bg-[#de0f0f] px-4 py-2 text-white ml-4" onClick={clearCart}>Limpiar carrito</button>
+                        <button className="flex items-center rounded-[5px] font-bold bg-[#de0f0f] text-sm px-4 py-2 text-white" onClick={clearCart}><FaRegTrashAlt /> <span className="pl-1">Limpiar carrito</span></button>
                         <span className="font-semibold text-xl text-gray-900">Total de la compra:  ${getTotalPrice().toFixed(2)}</span>
                      </div>
                      <CartCheckout />
