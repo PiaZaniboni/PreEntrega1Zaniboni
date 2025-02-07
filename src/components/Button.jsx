@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Button(props){
     const { color, disabled, children, handleClick, estilos } = props;
 
+    //Borrar si no se usa
     const [isDisabled, setIsDisabled] = useState(disabled);
     const [colorState, setColorState] = useState(color);
 

@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import cartContext from "../storage/cartContext";
 import CartItem from "./CartItem";
+import CartCheckout from "./CartCheckout";
 
-export default function CartView (props){
-    const { cartItems, removeItem, clearCart, totalCompra } = useContext (cartContext);
+export default function CartContainer (props){
+    const { cartItems, removeItem, clearCart, getTotalPrice } = useContext (cartContext);
 
     return (
         <>
@@ -22,8 +23,10 @@ export default function CartView (props){
                             handleRemoveItem={removeItem}
                         />
                      )}
-                     <div>TOTAL= {totalCompra()}</div>
+                     <div>TOTAL= {getTotalPrice()}</div>
                      <button onClick={clearCart}>Limpiar carrito</button>
+
+                     <CartCheckout />
                     </>
                 ) :
                 (

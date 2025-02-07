@@ -20,22 +20,26 @@ export default function ItemDetail (props){
       <div className="mt-4">
         <h3 className="font-bold text-2xl">{title}</h3>
         <p className="text-gray-700">{category}</p>
-        <div className="flex mt-4 mb-6">
-          <p className="font-bold text-lg text-gray-700 mr-8">$ {price}</p>
+        <p className="font-bold text-lg text-gray-700 mt-4 mr-8">$ {price}</p>
           {
             stock > 0 ?
               isAddedToCart ? 
               (
-                <NavLink to="/cart"><button>Finalizar compra</button></NavLink>
+                <div className="mt-2 mb-6">
+                  <h5 className="block mb-4 font-bold color-[#186400]">Producto agregado al carrito!</h5>
+                  <NavLink to="/cart" className="font-bold bg-[#b8ebc8] text-center px-4 py-2 text-[#003f13] rounded-[10px]">Finalizar compra</NavLink>
+                </div>
               )
               :
               (
-                <ItemCount onSubmitCount={onSubmitCount} maxStock={stock} />
+                <div className="flex mt-2 mb-6">
+                  <ItemCount onSubmitCount={onSubmitCount} maxStock={stock} />
+                </div>
               )
             :
-            <h4>Este producto no tiene stock</h4>
+            <h5 className="block mt-2 mb-4 font-bold text-[#a80000]">Este producto no tiene stock</h5>
         }          
-        </div>
+
       </div>
     </div>
     );

@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, getDoc, doc,  query, where, addDoc, setDoc, writeBatch, documentId } from "firebase/firestore";
 import products from "./data";
-import { ImOffice } from "react-icons/im";
 
 
 //Esta data no se suele guardar en el repo!! 
@@ -69,4 +68,50 @@ export async function exportProducts(params) {
     const commitRes = await batch.commit();
 
     console.log( "Subida de productos terminada: " , commitRes );
+}
+
+export async function createBuyOrderWithStockUpdate(order) {    
+    const orderRef = collection( db, "orders" );
+    const productsRef = collection( db, "products" );
+
+    const batch = writeBatch(db);
+
+    const productsOrderIds = order.cartItems.map ( (item) => item.id );
+    const querySnapshot = await getDocs( query( productsRef, where ( documentId(), "in", productsOrderIds ) ));
+    const docsToUpdate = querySnapshot.docs;
+
+    let itemsSinStock = [];
+
+    docsToUpdate.forEach((doc) => {
+        let { stock } = doc.data();
+
+        let itemInCart = order.cartItems.find((item) => item.id === doc.id);
+        let countInCart = itemInCart.count;
+
+        let newStock = stock - countInCart;
+ 
+        if (newStock < 0) {
+            itemsSinStock.push(doc.id);
+        }else{
+            batch.update(doc.ref, { stock: newStock });
+        }
+    });
+
+    console.log(itemsSinStock);
+
+    const itemsSinStockTitles = itemsSinStock.map ( item => item.title ).join(", ");
+
+    if (itemsSinStock.length > 0){
+        console.log("entre", itemsSinStock);
+        throw new Error( `Disculpanos! No tenemos stock de los siguientes productos: ${itemsSinStockTitles}`);
+    }else{
+
+        await batch.commit();
+        console.log(order);
+
+        let newOrder = await addDoc( orderRef, order );
+
+        return newOrder.id;
+    }
+
 }

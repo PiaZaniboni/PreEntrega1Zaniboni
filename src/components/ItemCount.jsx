@@ -27,13 +27,13 @@ export default function ItemCount (props){
 
     return (
         <>
-        <div className="bg-slate-100 rounded-sm px-1">
+        <div className="bg-slate-100 rounded-sm px-2 flex items-center">
             <Button estilos={estilos} handleClick={handleSubstract}>-</Button>
-                <span className="mx-2">{count}</span>
+                <span className="mx-3 min-w-[10px]">{count}</span>
             <Button estilos={estilos} handleClick={handleAdd}>+</Button>
         </div>
                
-        <Button estilos="rounded-[5px] bg-slate-950 px-4 py-2 text-white" handleClick={handleClick}>Agregar al carrito</Button>
+        <Button estilos="rounded-[5px] bg-slate-950 px-4 py-2 text-white ml-4" handleClick={handleClick}>Agregar al carrito</Button>
         </>
     );
 }

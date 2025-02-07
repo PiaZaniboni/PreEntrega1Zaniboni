@@ -42,14 +42,13 @@ export function CartContextProvider (props){
         setCartItems([]);
     }
 
-    function totalCompra(){
-        let total = 0;
+    function getTotalPrice(){
+        let totalPrice = 0;
         cartItems.forEach((item)=>{
-            total += item.count*item.price;
+            totalPrice += item.count*item.price;
         });
 
-        console.log( "Total compra", total );
-        return total;
+        return totalPrice;
     }
 
     return <cartContext.Provider 
@@ -59,7 +58,7 @@ export function CartContextProvider (props){
                 addItem,
                 clearCart,
                 removeItem,
-                totalCompra,
+                getTotalPrice,
                 name: "Carrito de compras" 
             }} 
             >
