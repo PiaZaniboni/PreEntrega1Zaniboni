@@ -1,22 +1,42 @@
-# Zaniboni React
+<h1 align="center">
+  <br>
+  <a href="https://zaniboni-react.vercel.app/"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Zaniboni React" width="200"></a>
+  <br>
+  Zaniboni React
+  <br>
+</h1>
 
-![Zaniboni React Logo](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png)
+<h4 align="center">Un proyecto final del curso de React de Coderhouse. Mi primer acercamiento a React. ¡Espero que les guste!</h4>
 
-Un proyecto final del curso de React de Coderhouse. Mi primer acercamiento a React. ¡Espero que les guste!
+<p align="center">
+  <a href="https://badge.fury.io/js/zaniboni-react">
+    <img src="https://badge.fury.io/js/zaniboni-react.svg" alt="Version Badge">
+  </a>
+  <a href="https://www.linkedin.com/in/maria-pia-zaniboni/"><img src="https://img.shields.io/badge/LinkedIn-Maria%20P%C3%ADa%20Zaniboni-blue"></a>
+  <a href="https://www.behance.net/mpiazaniboni10"><img src="https://img.shields.io/badge/Behance-Maria%20P%C3%ADa%20Zaniboni-orange"></a>
+</p>
 
-## Links
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#download">Download</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">License</a>
+</p>
 
-- **Web en Vercel**: [Zaniboni React](https://zaniboni-react.vercel.app/)
-- **LinkedIn**: [Maria Pia Zaniboni](https://www.linkedin.com/in/maria-pia-zaniboni/)
-- **Behance**: [Maria Pia Zaniboni](https://www.behance.net/mpiazaniboni10)
+![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+
+## Introducción
+
+¡Hola Mundo! Bienvenidos a mi proyecto final del curso de React de Coderhouse. Mi nombre es Maria Pia Zaniboni, soy oriunda de Nequen Capital. Licenciada en Diseño Multimedia, trabajo desde el 2016 en programación creando sitios en PHP. Este es mi primer acercamiento a React, ¡espero que les guste!
 
 ## Key Features
 
-- Aplicación de carrito de compras interactiva.
-- Añadir y eliminar productos.
-- Calculadora de total de compra.
-- Manejo de formulario para completar la compra.
-- Interfaz simple y minimalista utilizando **Tailwind CSS**.
+* Aplicación de carrito de compras interactiva.
+* Añadir y eliminar productos.
+* Calculadora de total de compra.
+* Manejo de formulario para completar la compra.
+* Interfaz simple y minimalista utilizando **Tailwind CSS**.
 
 ## How To Use
 
