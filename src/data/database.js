@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, getDoc, doc,  query, where, addDoc, setDoc, writeBatch, documentId } from "firebase/firestore";
 import products from "./data";
+import { ImOffice } from "react-icons/im";
+
 
 //Esta data no se suele guardar en el repo!! 
 const firebaseConfig = {
-  apiKey: "AIzaSyAsR-TL_pXrOuOE1Zbl7m4xPv_LbJTGg8U",
+  apiKey: import.meta.env.FIRESTORE_APIKEY,
   authDomain: "creative-lab-98da1.firebaseapp.com",
   projectId: "creative-lab-98da1",
   storageBucket: "creative-lab-98da1.firebasestorage.app",
   messagingSenderId: "164544546323",
-  appId: "1:164544546323:web:327461e6d3ba7a5f25e1e6"
+  appId: import.meta.env.FIRESTORE_APPID
 };
 
 const app = initializeApp(firebaseConfig);

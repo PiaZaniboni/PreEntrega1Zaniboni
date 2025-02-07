@@ -6,7 +6,7 @@ export default function Item (props){
 
     return (
         <div className="mb-6 mx-2">
-            <img className="rounded-[5px]" src={"https://picsum.photos"+img} alt={title} />
+            <img className="rounded-[5px]" src={"https://picsum.photos"+img} alt={title} width="240" height="180" />
             <div className="mt-2">
                 <h3 className="font-bold text-gray-800 text-base">{title}</h3>
                 <p className="text-gray-700 text-sm">{category}</p>

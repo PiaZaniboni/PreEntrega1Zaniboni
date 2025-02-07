@@ -10,6 +10,7 @@ import { exportProducts } from "./data/database";
 import '@fontsource/roboto/400.css'; // Regular
 import '@fontsource/roboto/500.css'; // Bold
 import '@fontsource/roboto/700.css'; // Bold
+import CartView from "./components/CartView.jsx";
 
 function App() {
 
@@ -24,13 +25,14 @@ function App() {
               <Route path="/" element={<ItemListContainer greeting="Listado de productos"/>} />
               <Route path="/category/:catid" element={<ItemListContainer greeting="Listado de productos de la categoria "/>} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<CartView />} />
             </Routes>
           </main>
       </BrowserRouter>
     </CartContextProvider>
     <footer className="text-center font-sans w-full bg-slate-950 text-white py-4 mt-10">
       <small>Programado por Maria Pia Zaniboni</small>
-      <button  onClick={exportProducts}>MIGRAR PRODUCTOS</button>
+      {/*<button  onClick={exportProducts}>MIGRAR PRODUCTOS</button>*/}
     </footer>
   </div>
   )

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 export default function ItemCount (props){
     let [ count, setCount] = useState(1);
@@ -27,12 +28,12 @@ export default function ItemCount (props){
     return (
         <>
         <div className="bg-slate-100 rounded-sm px-1">
-            <button className={estilos} onClick={handleSubstract}>-</button>
+            <Button estilos={estilos} handleClick={handleSubstract}>-</Button>
                 <span className="mx-2">{count}</span>
-            <button className={estilos} onClick={handleAdd}>+</button>
+            <Button estilos={estilos} handleClick={handleAdd}>+</Button>
         </div>
                
-        <button className="rounded-[5px] bg-slate-950 px-4 py-2 text-white" onClick={handleClick}>Agregar al carrito</button>
+        <Button estilos="rounded-[5px] bg-slate-950 px-4 py-2 text-white" handleClick={handleClick}>Agregar al carrito</Button>
         </>
     );
 }

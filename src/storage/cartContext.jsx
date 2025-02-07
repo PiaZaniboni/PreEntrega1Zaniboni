@@ -29,8 +29,6 @@ export function CartContextProvider (props){
         setCartItems(newCartState);
     }
 
-    //2.Vaciar carrito
-
     function countItemsInCart (){
         let total = 0;
         cartItems.forEach((item)=>{
@@ -44,11 +42,24 @@ export function CartContextProvider (props){
         setCartItems([]);
     }
 
+    function totalCompra(){
+        let total = 0;
+        cartItems.forEach((item)=>{
+            total += item.count*item.price;
+        });
+
+        console.log( "Total compra", total );
+        return total;
+    }
+
     return <cartContext.Provider 
             value={{
                 cartItems,
                 countItemsInCart,
                 addItem,
+                clearCart,
+                removeItem,
+                totalCompra,
                 name: "Carrito de compras" 
             }} 
             >

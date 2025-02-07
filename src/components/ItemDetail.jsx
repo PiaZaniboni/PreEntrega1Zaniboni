@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useContext, useState } from "react";
 import cartContext from "../storage/cartContext";
+import { NavLink } from "react-router-dom";
 
 export default function ItemDetail (props){
     const { title, category, price, img, stock, id } = props;
@@ -9,13 +9,10 @@ export default function ItemDetail (props){
 
     const { addItem } = useContext(cartContext);
 
-
     function onSubmitCount(count){
-      console.log("itemDetail", id);
       addItem({id,price,title,count,img});
       setIsAddedToCart(true);
     }
-
 
     return (
       <div className="mx-8 mt-20 flex justify-center">
@@ -25,14 +22,18 @@ export default function ItemDetail (props){
         <p className="text-gray-700">{category}</p>
         <div className="flex mt-4 mb-6">
           <p className="font-bold text-lg text-gray-700 mr-8">$ {price}</p>
-          {isAddedToCart ? 
-          (
-            <button>Ver carrito</button>
-          )
-          :
-          (
-            <ItemCount onSubmitCount={onSubmitCount} maxStock={stock} />
-          )
+          {
+            stock > 0 ?
+              isAddedToCart ? 
+              (
+                <NavLink to="/cart"><button>Finalizar compra</button></NavLink>
+              )
+              :
+              (
+                <ItemCount onSubmitCount={onSubmitCount} maxStock={stock} />
+              )
+            :
+            <h4>Este producto no tiene stock</h4>
         }          
         </div>
       </div>

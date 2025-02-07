@@ -1,13 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Button(props){
+    const { color, disabled, children, handleClick, estilos } = props;
 
-    const { link, children } = props;
-    const displayText = children === undefined ? 'Button' : children;
+    const [isDisabled, setIsDisabled] = useState(disabled);
+    const [colorState, setColorState] = useState(color);
 
     return (
-        <NavLink className="px-5 font-sans" to={link}>
-            {displayText}
-        </NavLink>
-    );
+        <button
+            className={estilos}
+            onClick={handleClick}
+            style={{backgroundColor: colorState}}
+            disabled={isDisabled}
+
+        >
+            {children}
+        </button>
+    )
+
 }
