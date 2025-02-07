@@ -20,7 +20,7 @@ export default function ItemDetail (props){
       <div className="mt-4">
         <h3 className="font-bold text-2xl">{title}</h3>
         <p className="text-gray-700">{category}</p>
-        <p className="font-bold text-lg text-gray-700 mt-4 mr-8">$ {price}</p>
+        <p className="font-bold text-lg text-gray-700 mt-4 mr-8">$ {price.toFixed(2)}</p>
           {
             stock > 0 ?
               isAddedToCart ? 
@@ -28,6 +28,7 @@ export default function ItemDetail (props){
                 <div className="mt-2 mb-6">
                   <h5 className="block mb-4 font-bold color-[#186400]">Producto agregado al carrito!</h5>
                   <NavLink to="/cart" className="font-bold bg-[#b8ebc8] text-center px-4 py-2 text-[#003f13] rounded-[10px]">Finalizar compra</NavLink>
+                  <NavLink to="/" className="rounded-[5px] bg-slate-950 px-4 py-2 text-white ml-4" >Agregar mas productos</NavLink>  
                 </div>
               )
               :

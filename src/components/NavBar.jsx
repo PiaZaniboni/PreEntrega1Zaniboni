@@ -17,9 +17,6 @@ export default function NavBar (props){
                     <NavLink className={styleLink} to="/category/posters">Posters</NavLink>
                     <NavLink className={styleLink} to="/category/cuadernos">Cuadernos</NavLink>
                     <NavLink className={styleLink} to="/category/remeras">Remeras</NavLink>
-                    <NavLink className={styleLink} to="/category/remeras">Remeras</NavLink>
-                    
-                    
                     <NavLink to="/cart">
                         <CartWidget />
                     </NavLink>

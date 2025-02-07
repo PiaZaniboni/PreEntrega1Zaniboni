@@ -43,7 +43,7 @@ export default function CartCheckout (props) {
 
     return (
         <div>
-            <button onClick={handleCheckout}>Finalizar compra</button> 
+            <button className="rounded-[5px] bg-slate-950 px-4 py-2 text-white ml-4 mt-14" onClick={handleCheckout}>Finalizar compra</button> 
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         </div>

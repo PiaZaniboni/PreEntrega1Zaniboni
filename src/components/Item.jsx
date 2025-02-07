@@ -10,7 +10,7 @@ export default function Item (props){
             <div className="mt-2">
                 <h3 className="font-bold text-gray-800 text-base">{title}</h3>
                 <p className="text-gray-700 text-sm">{category}</p>
-                <p className="font-bold text-black-700">${price}</p>
+                <p className="font-bold text-black-700">${price.toFixed(2)}</p>
                 <Link to={`/item/${id}`}>
                     <span className="underline uppercase text-sm mt-2 block">Ver detalle</span>
                 </Link>
